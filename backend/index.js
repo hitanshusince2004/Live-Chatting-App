@@ -4,10 +4,10 @@ import express from "express";  // ✅ Now properly imported
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import path from "path";
-import { connectDB } from "./lib/db.js";
-import authRoutes from "./routes/auth.route.js";
-import messageRoutes from "./routes/message.route.js";
-import { app, server } from "./lib/socket.js";
+import { connectDB } from "./src/lib/db.js";
+import authRoutes from "./src/routes/auth.route.js";
+import messageRoutes from "./src/routes/message.route.js";
+import { app, server } from "./src/lib/socket.js";
 
 const PORT = process.env.PORT || 5001; // Default to 5001 if env variable is missing
 
