@@ -1,20 +1,21 @@
-import express from "express";
 import dotenv from "dotenv";
+dotenv.config(); // Load environment variablesimport express from "express";
+import express from "express";  // ✅ Now properly imported
 import cookieParser from "cookie-parser";
 import cors from "cors";
-
 import path from "path";
-
 import { connectDB } from "./lib/db.js";
-
 import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.route.js";
 import { app, server } from "./lib/socket.js";
 
-dotenv.config();
+const PORT = process.env.PORT || 5001; // Default to 5001 if env variable is missing
 
-const PORT = process.env.PORT;
 const __dirname = path.resolve();
+
+console.log("PORT from .env:", process.env.PORT);
+console.log("MONGODB_URI from .env:", process.env.MONGODB_URI);
+
 
 app.use(express.json());
 app.use(cookieParser());
